@@ -31,7 +31,7 @@ foreach (DirectoryInfo dir in dirs)
     Console.WriteLine();
 Console.WriteLine("Файлы");
 FileInfo[] files = directory.GetFiles();
-foreach(FailInfo file in files)
+foreach(FileInfo file in files)
 {
     Console.WriteLine(files.Fullname);
 }
