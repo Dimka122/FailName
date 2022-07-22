@@ -15,7 +15,7 @@ using System.Text;
 //RegistryKey myAppKey = registry.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
 //myAppKey.SetValue("filename", $"{Directory.GetCurrentDirectory()}//filename.exe");
 
-string path = "/Users/eugene/Documents/content.txt";
+string path = "C:/Code/FileName/fileName/content.txt";
 
 string origanalText = "Привет Дима! Как дела?";
 
