@@ -2,6 +2,7 @@
 //String[] dirs = Directory.GetFiles(directory, ".txt"); //Поиск всех файлов в папке с расширением txt
 
 using Microsoft.Win32;
+
 using System.Text;
 
 
@@ -10,10 +11,15 @@ using System.Text;
 //RegistryKey myAppKey = Registry.OpenSubKey(@"SOFTWARE\\Microsoft\Windows\CurrentVersion\Run", true);
 //myAppKey.SetValue("MyApp", $"{Directory.GetCurrentDirectory()}//ConsoleApp3.exe");
 
+//string[] fullfilesPath = Directory.GetFiles(@"C:\Code\FileName", "*.*", SearchOption.AllDirectories);
 
-//RegistryKey registry = Registry.LocalMachine;
-//RegistryKey myAppKey = registry.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-//myAppKey.SetValue("filename", $"{Directory.GetCurrentDirectory()}//filename.exe");
+DirectoryInfo dir = new DirectoryInfo(@"C:\Windows");
+Console.WriteLine("список каталогов");
+foreach(var item in dir.GetDirectories())
+{
+    //Console.ReadLine();
+    Console.WriteLine(dir.Name+item.Name + Environment.NewLine);
+}
 
 string path = "C:/Code/FileName/fileName/content.txt";
 
@@ -22,5 +28,12 @@ string origanalText = "Привет Дима! Как дела?";
 await File.WriteAllTextAsync(path, origanalText, Encoding.Unicode);
 await File.AppendAllTextAsync(path, "\nПривет. Хорошо!", Encoding.Unicode);
 
+
 string fileText = await File.ReadAllTextAsync(path, Encoding.Unicode);
+
 Console.WriteLine(fileText);
+
+//RegistryKey registry = Registry.LocalMachine;
+//RegistryKey myAppKey = registry.OpenSubKey(@"SOFTWARE/Microsoft/Windows/CurrentVersion/Run", true);
+//myAppKey.SetValue("filename", $"{Directory.GetCurrentDirectory()}//filename.exe");
+
