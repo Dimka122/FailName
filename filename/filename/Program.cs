@@ -1,25 +1,18 @@
-﻿//string directory = "D:\\Programs\\ Загрузки"; //Директория
-//String[] dirs = Directory.GetFiles(directory, ".txt"); //Поиск всех файлов в папке с расширением txt
-
-using Microsoft.Win32;
-
+﻿using Microsoft.Win32;
 using System.Text;
 
-
-//SOFTWARE\Microsoft\Windows\CurrentVersion\Run
-//RegistryKey registry = Registry.CurrentUser;
-//RegistryKey myAppKey = Registry.OpenSubKey(@"SOFTWARE\\Microsoft\Windows\CurrentVersion\Run", true);
-//myAppKey.SetValue("MyApp", $"{Directory.GetCurrentDirectory()}//ConsoleApp3.exe");
-
-//string[] fullfilesPath = Directory.GetFiles(@"C:\Code\FileName", "*.*", SearchOption.AllDirectories);
-
-DirectoryInfo dir = new DirectoryInfo(@"C:\Windows");
+DirectoryInfo dir = new DirectoryInfo(@"C:/Code/FileName/fileName");
+if (Directory.Exists(@"C:/Code/FileName/fileName"))
+{    
 Console.WriteLine("список каталогов");
+}
 foreach(var item in dir.GetDirectories())
 {
     //Console.ReadLine();
     Console.WriteLine(dir.Name+item.Name + Environment.NewLine);
 }
+
+
 
 string path = "C:/Code/FileName/fileName/content.txt";
 
@@ -32,6 +25,7 @@ await File.AppendAllTextAsync(path, "\nПривет. Хорошо!", Encoding.Un
 string fileText = await File.ReadAllTextAsync(path, Encoding.Unicode);
 
 Console.WriteLine(fileText);
+
 
 //RegistryKey registry = Registry.LocalMachine;
 //RegistryKey myAppKey = registry.OpenSubKey(@"SOFTWARE/Microsoft/Windows/CurrentVersion/Run", true);
